@@ -1,0 +1,67 @@
+﻿@model Event_Management_System_BootCamp.DbContext.Hall
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/HallView.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hall</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HallName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HallName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeSlot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeSlot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatingCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatingCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumBookingCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimumBookingCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUsers.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsers.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

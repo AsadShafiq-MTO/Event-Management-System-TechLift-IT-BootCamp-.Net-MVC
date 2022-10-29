@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Event_Management_System_BootCamp.DbContext.Hall>
+
+@{
+    ViewBag.Title = "Index";
+   
+    Layout = "~/Views/Shared/HallView.cshtml";
+
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+<link href="~/Content/Mycss/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/Mycss/style.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/Mycss/font-awesome.min.css" rel="stylesheet">
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="inner-banner-w3ls py-5" id="home">
+    <div class="container py-xl-5 py-lg-3">
+
+        <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold"><span class="text-bl">Hall List</span></h3>
+
+
+        @using (Html.BeginForm("index", "Hall", FormMethod.Post))
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.Label("Search", new { @class = "col-md-2 control-label" })
+                    <div class="col-md-8">
+                        @Html.TextBox("searchTXT", null, new { @class = "form-control", @placeholder = "Location", @FontSize = "600", @style = "max-width:100%" })
+
+                        <button class="btn btn-primary" type="submit">Search</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.ActionLink("Hall Name", "index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortedBy = "HallName" })
+
+                        @*@Html.DisplayNameFor(model => model.HallName)*@
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TimeSlot)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SeatingCapacity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MinimumBookingCapacity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @Html.ActionLink("Email", "index", new { SortOrder = ViewBag.SortOrder == null ? "Asc" : (ViewBag.SortOrder == "Asc" ? "Desc" : "Asc"), SortedBy = "AspNetUsers.Email" })
+
+                        @*@Html.DisplayNameFor(model => model.AspNetUsers.Email)*@
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HallName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeSlot)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SeatingCapacity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MinimumBookingCapacity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AspNetUsers.Email)
+                        </td>
+                        <td>
+                            <span> <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-success ">Edit</a>  </span>
+                            <span>
+                                <a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-secondary">Details</a>                                                                   
+                            </span>
+                            <span>
+                                <a href="@Url.Action("Delete", new { id = item.Id})" class="btn btn-danger">Delete</a>                                                                      
+                            </span>
+                                                                                               @*<i class="glyphicon glyphicon-trash"></i>*@
+                            
+                        </td>
+                        @*<td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            </td>*@
+                    </tr>
+                }
+
+            </table>
+        }
+    </div>
+
+
+</div>

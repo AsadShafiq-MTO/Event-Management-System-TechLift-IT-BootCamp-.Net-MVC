@@ -1,0 +1,42 @@
+﻿@model Event_Management_System_BootCamp.DbContext.Decoration
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Decoration</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Flowers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flowers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balloon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balloon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

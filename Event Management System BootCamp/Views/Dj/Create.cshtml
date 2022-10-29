@@ -1,0 +1,79 @@
+﻿@model Event_Management_System_BootCamp.DbContext.Dj
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Dj.cshtml";
+    
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+@*<link href="~/Content/Mycss/bootstrap.css" rel='stylesheet' type='text/css' />*@
+<link href="~/Content/Mycss/style.css" rel='stylesheet' type='text/css' />
+<link href="~/Content/Mycss/font-awesome.min.css" rel="stylesheet">
+<h2>Create</h2>
+
+<div class="inner-banner-w3ls py-5" id="home">
+    <div class="container py-xl-5 py-lg-3">
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold"><span class="text-bl">Dj</span></h3>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @*<h4>Dj</h4>*@
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Speaker, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Speaker, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Speaker, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SoundSystem, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SoundSystem, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SoundSystem, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" value="Create" class="btn btn-primary">submit</button>
+                        @*<input type="submit" value="Create" class="btn btn-default" />*@
+                        <button type="reset" class="btn btn-danger ">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

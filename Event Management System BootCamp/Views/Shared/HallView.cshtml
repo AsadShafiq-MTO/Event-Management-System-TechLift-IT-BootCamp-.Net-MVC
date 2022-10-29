@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "HallView";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title -Event Management System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!--font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css file link -->
+    <link href="~/Content/css/signup.css" rel="stylesheet" />
+
+
+
+
+
+    @*<link href="~/Content/Mycss/bootstrap.css" rel='stylesheet' type='text/css' />*@
+    @*<link href="~/Content/Mycss/style.css" rel='stylesheet' type='text/css' />*@
+    @*<link href="~/Content/Mycss/font-awesome.min.css" rel="stylesheet">*@
+
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+          rel="stylesheet">
+
+
+
+
+
+
+</head>
+<!-- header section starts  -->
+
+<header class="header">
+    <span class="logo">
+        @Html.ActionLink("Event Management System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    </span>
+    @*<a href="~/Views/Home/Index.html" class="logo"><span>e</span>vent<span>M</span>anagement<span>S</span>ystem </a>*@
+
+<nav class="navbar">
+    
+    <a href="#Home">@Html.ActionLink("Home", "Index", "Home")</a>   
+    <a href="#SignIn">@Html.ActionLink("Hall", "Index", "Hall")</a>
+    <a href="#Signup">@Html.ActionLink("Search Hall Avalibility", "HallAvalibility", "HallBooking")</a>
+
+</nav>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+
+</header>
+
+<!-- header section ends -->
+
+<div>
+    @RenderBody()
+</div>
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    @*<div class="box-container">*@
+
+    @*<div class="box">
+            <h3>branches</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Lahore </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Karachi </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Rawalpandi </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Islamabad </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Faisalabad </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> service </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> about </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> gallery </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> price </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> reivew </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +321-430-9014 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +319-627-9790 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> asadshafiq1228@gmail.com </a>
+            <a href="#"> <i class="fas fa-envelope"></i> asadshafiqdcs.2022130037@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> bilal gunj, lahore - 54000 </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.facebook.com/asad.shafiq.3348"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="https://twitter.com/Asadshafiq1228?t=mapsFhfDJgS_u4ppXjONTA&s=08"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="https://www.linkedin.com/in/asad-shafiq-21b76321b"> <i class="fab fa-linkedin"></i> linkedin </a>
+        </div>*@
+
+    @*</div>*@
+
+    <div class="credit">  <p>&copy; by <span>mr. Asad Shafiq</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+<!-- theme toggler  -->
+
+<div class="theme-toggler">
+
+    <div class="toggle-btn">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <h3>choose color</h3>
+
+    <div class="buttons">
+        <div class="theme-btn" style="background: #3867d6;"></div>
+        <div class="theme-btn" style="background: #f7b731;"></div>
+        <div class="theme-btn" style="background: #ff0033;"></div>
+        <div class="theme-btn" style="background: #20bf6b;"></div>
+        <div class="theme-btn" style="background: #fa8231;"></div>
+        <div class="theme-btn" style="background: #FC427B;"></div>
+    </div>
+
+</div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+<!--  custom js file link -->
+@*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)*@
+
+<script src="~/js/script.js"></script>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+@RenderSection("Scripts", false)
+
+
+
+
+
+
+

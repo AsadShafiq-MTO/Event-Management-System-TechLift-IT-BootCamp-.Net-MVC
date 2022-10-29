@@ -1,0 +1,10 @@
+﻿
+
+///////////Db Migration/////////////
+
+Scaffold-DbContext "Server=.;Database=EMS;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Database
+
+
+////with -f//// when we create new table 
+
+Scaffold-DbContext "Server=.;Database=EMS;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Database -f

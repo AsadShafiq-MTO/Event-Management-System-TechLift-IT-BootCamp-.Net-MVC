@@ -1,0 +1,29 @@
+﻿
+
+
+
+step1.  /////first of all we add DbConnection string in (web configur) file
+
+
+
+step.2   //////we add pakeges like //these packages blow 4.8
+
+           1.entity framework core 3.1.4
+           2.entity framework sql  3.1.4
+           3.entity framework tool 3.1.4
+
+
+
+step.3  ///after add package we add new (Database folder) in the project
+
+step.4  ///if our DB is already created then we add (Scaffold Commond in ---command.txt file--- in nutGet Pakege Console) and the same time my Db is 
+           migrate in the database folder in the project.
+
+step.5  ///
+
+
+
+
+
+
+
